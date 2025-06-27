@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/assets/*": ["./src/shared/assets/*"]
+    }
+  },
+  "include": [
+    "types/next-env.d.ts",
+    "types/svgr.d.ts",
+    "**/*.ts",
+    "src/**/*.ts",
+    "**/*.tsx",
+    "./prisma/**/*.ts",
+    ".next/types/**/*.ts",
+    "src/index.js"
+  ],
+  "exclude": ["node_modules"]
+}

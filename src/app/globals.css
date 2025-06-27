@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+	--color-light: #deeaf1;
+	--color-dark: #2b2d91;
+}
+
+@utility bg-gradient-light {
+	@apply bg-gradient-to-b from-[var(--color-light)] to-white;
+}
+
+@utility bg-gradient-dark {
+	@apply bg-gradient-to-b from-[var(--color-dark)] to-white;
+}
+
+@utility container {
+	@apply w-full max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8;
+}
+
+@utility border-dark {
+	@apply border-2 border-[var(--color-dark)] rounded-xl;
+}
+
+@utility button-dark {
+	@apply bg-dark border-dark text-white px-2 py-1 cursor-pointer hover:bg-white hover:text-dark
+}
+
+@utility button-light {
+	@apply bg-light border-dark text-dark px-2 py-1 cursor-pointer hover:bg-dark hover:text-white
+}
+
+@utility link {
+	@apply cursor-pointer hover:text-dark;
+}
+
+@utility after_underline {
+	@apply after:block after:bottom-0 after:left-0 after:right-0 after:h-1 after:bg-dark after:rounded-full;
+}
+
+@utility before_underline {
+	@apply before:block before:bottom-0 before:left-0 before:right-0 before:h-1 before:bg-dark before:rounded-full;
+}

@@ -1,0 +1,53 @@
+{
+  "name": "crystal_puzzles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "seed": "tsx prisma/seed.ts",
+    "lint": "next lint",
+    "lint:code": "eslint \"**/*.{ts,tsx}\"",
+    "lint:code:fix": "eslint . --ext .ts,.tsx --fix",
+    "prisma:generate": "prisma generate --schema=./packages/db/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "@reduxjs/toolkit": "^2.6.1",
+    "classnames": "^2.5.1",
+    "lucide-react": "^0.476.0",
+    "moment": "^2.30.1",
+    "next": "15.2.0",
+    "next-auth": "^5.0.0-beta.25",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.21.0",
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^20.17.24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "15.2.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.5.3",
+    "prisma": "^6.5.0",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.25.0"
+  }
+}
