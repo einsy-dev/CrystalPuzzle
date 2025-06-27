@@ -1,0 +1,19 @@
+{
+  "Next Page": {
+    "prefix": [
+      "page"
+    ],
+    "body": [
+      "export const metadata = {};",
+      "export default function $1($2) {",
+      "  return (",
+      "    <>",
+      "      <div>$1</div>",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "",
+    "scope": "javascriptreact"
+  }
+}

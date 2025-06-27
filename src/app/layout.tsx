@@ -15,6 +15,7 @@ const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
 });
+
 export default function RootLayout({
   children,
 }: Readonly<{

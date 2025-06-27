@@ -1,0 +1,38 @@
+export const routes = {
+  student: [
+    { name: 'Главная', path: '/' },
+    { name: 'Календарь', path: '/calendar' },
+    { name: 'Сообщения', path: '/messages' },
+    { name: 'Уведомления', path: '/notifications' },
+    { name: 'Профиль', path: '/profile' },
+    { name: 'Задания', path: '/tasks' },
+    { name: 'Награды', path: '/rewards' },
+  ],
+  trainer: [
+    { name: 'Главная', path: '/' },
+    { name: 'Календарь', path: '/calendar' },
+    { name: 'Сообщения', path: '/messages' },
+    { name: 'Уведомления', path: '/notifications' },
+    { name: 'Профиль', path: '/profile' },
+    { name: 'Задания', path: '/tasks' },
+    { name: 'Награды', path: '/rewards' },
+  ],
+  supervisor: [
+    { name: 'Главная', path: '/' },
+    { name: 'Календарь', path: '/calendar' },
+    { name: 'Сообщения', path: '/messages' },
+    { name: 'Уведомления', path: '/notifications' },
+    { name: 'Профиль', path: '/profile' },
+    { name: 'Задания', path: '/tasks' },
+    { name: 'Награды', path: '/rewards' },
+  ],
+  admin: [
+    { name: 'Главная', path: '/' },
+    { name: 'Календарь', path: '/calendar' },
+    { name: 'Сообщения', path: '/messages' },
+    { name: 'Уведомления', path: '/notifications' },
+    { name: 'Профиль', path: '/profile' },
+    { name: 'Задания', path: '/tasks' },
+    { name: 'Награды', path: '/rewards' },
+  ],
+};

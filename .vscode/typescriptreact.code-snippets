@@ -1,0 +1,21 @@
+{
+  "Next Page": {
+    "prefix": [
+      "page"
+    ],
+    "body": [
+      "import { Metadata } from 'next';",
+      "",
+      "export const metadata: Metadata = {};",
+      "export default function $1($2) {",
+      "  return (",
+      "    <>",
+      "      <div>$1</div>",
+      "    </>",
+      "  );",
+      "}"
+    ],
+    "description": "",
+    "scope": "typescriptreact"
+  }
+}

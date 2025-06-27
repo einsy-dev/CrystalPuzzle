@@ -1,17 +1,12 @@
 'use client';
 
-import { useSwipe } from '@/shared';
+import { routes, useSwipe } from '@/shared';
 import { ChevronDown, LogOut } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 interface SidebarProps {
-  routes: {
-    name: string;
-    path: string;
-  }[];
   className?: string;
 }
 const defaultStyle =
@@ -20,12 +15,11 @@ const defaultStyle =
 const mdStyle =
   'md:p-0 md:py-6 md:translate-x-0 md:top-auto md:left-auto md:bottom-auto md:static md:w-1/3';
 
-export function Sidebar({ routes, className }: SidebarProps) {
+export function Sidebar({ className }: SidebarProps) {
   const [open, setOpen] = useState(false); // menu
   const [active, setActive] = useState(false); // sidebar itself
   const { data } = useSession();
 
-  const pathname = usePathname();
   useSwipe(
     typeof document !== 'undefined' ? document : undefined,
     (e: boolean) => {
@@ -58,7 +52,7 @@ export function Sidebar({ routes, className }: SidebarProps) {
           className="link px-2 flex items-center justify-between py-1"
           onClick={() => setOpen((prev) => !prev)}
         >
-          {routes.find((r) => r.path === pathname)?.name}
+          <span>Меню</span>
           <ChevronDown className={`duration-300 ${open ? 'rotate-180' : ''}`} />
         </div>
         <ul
@@ -66,13 +60,11 @@ export function Sidebar({ routes, className }: SidebarProps) {
             open ? 'h-fit' : 'h-0'
           }`}
         >
-          {routes
-            .filter((r) => r.path !== pathname)
-            .map(({ name, path }) => (
-              <li key={path} className="link">
-                <Link href={path}>{name}</Link>
-              </li>
-            ))}
+          {routes[data?.user?.role as Role]?.map(({ name, path }) => (
+            <li key={path} className="link">
+              <Link href={path}>{name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <div
@@ -87,3 +79,4 @@ export function Sidebar({ routes, className }: SidebarProps) {
     </aside>
   );
 }
+type Role = 'student' | 'trainer' | 'supervisor' | 'admin';

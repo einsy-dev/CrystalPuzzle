@@ -8,23 +8,28 @@ interface ScheduleProps {
 function getData() {
   return Array.from({ length: 30 }, (_, i) => ({
     id: i,
-    title: `Спортзал ${i}`,
+    title: `Спортзал lorem ipsum долор ${i}`,
     start: new Date(),
-    end: new Date(),
+    end: new Date(new Date().setHours(new Date().getHours() + 1)),
   }));
 }
 
 export function Schedule({ className }: Readonly<ScheduleProps>) {
   const data = getData();
   return (
-    <Card className={'overflow-scroll relative' + ' ' + className}>
-      <div className="absolute inset-0 p-4">
-        <div className=" text-center after_underline">Расписания</div>
-        <ul className="pt-2">
-          {data?.map((item) => (
-            <li key={item.id}>
-              <Link href={`/schedule/${item.id}`}>
-                <div className="">
+    <Card className={className}>
+      <div className="w-full h-full relative">
+        <div className="absolute inset-0 overflow-scroll px-2">
+          <div className=" text-center after_underline sticky top-0 bg-light">
+            Расписание
+          </div>
+          <ul className="pt-2">
+            {data?.map((item) => (
+              <li
+                key={item.id}
+                className="after:block after:w-full after:border after:border-dark last:after:hidden"
+              >
+                <Link href={`/schedule/${item.id}`} className="link block">
                   {item.start.toLocaleTimeString('ru', {
                     hour: '2-digit',
                     minute: '2-digit',
@@ -35,11 +40,11 @@ export function Schedule({ className }: Readonly<ScheduleProps>) {
                     minute: '2-digit',
                   })}{' '}
                   {item.title}
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Card>
   );
